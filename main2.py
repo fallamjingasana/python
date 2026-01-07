@@ -1,21 +1,9 @@
-name = "jeremy"
-age = 12
-is_student = True
-weight = 20.5
+amount = int(input("please enter the amount u wish to withdraw"))
 
-print("name" ,name)
-print ("type of name is" , type(name))
+note1 = amount//100
+note2 =(amount%100)//50
+note3 =((amount%100)%50)//10
 
-print("age" ,age)
-print ("type of age is" , type(age))
-
-print("is_student" ,is_student)
-print ("type of is_student is" , type(is_student))
-
-print("Wight" ,weight)
-print ("type of Weight is" , type(weight))
-
-
-#Typecasting
-weight2 = int(weight)
-print(weight2)
+print("notes of 100",note1)
+print("notes of 50",note2)
+print("notes of 10",note3)

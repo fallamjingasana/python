@@ -1,11 +1,11 @@
-a = 7
-print ("type of a is" ,type(a))
+tree1 = 25
+tree2 = 43
+tree3 = 12
+tree4 = 54
+tree5 = 33
 
-b = "jeremy"
-print ("type of b is" , type(b)) 
+sum = tree1 + tree2 + tree3 +  tree4 +  tree5
+print("the sum is: " ,sum) 
 
-c = 1.9
-print ("type of c is" , type(c))
-
-d =True
-print ("type of d is" , type(d))
+avg =sum/5
+print("the average is:",avg)
