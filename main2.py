@@ -1,9 +1,10 @@
-amount = int(input("please enter the amount u wish to withdraw"))
+x = 3
+y =5
 
-note1 = amount//100
-note2 =(amount%100)//50
-note3 =((amount%100)%50)//10
+print(x)
+print(y)
 
-print("notes of 100",note1)
-print("notes of 50",note2)
-print("notes of 10",note3)
+coding = "codingal"
+print(coding)
+name = input("enter your name")
+print(name)

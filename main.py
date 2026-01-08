@@ -1,11 +1,8 @@
-tree1 = 25
-tree2 = 43
-tree3 = 12
-tree4 = 54
-tree5 = 33
+#printing a greeting message
+print("hello python")
 
-sum = tree1 + tree2 + tree3 +  tree4 +  tree5
-print("the sum is: " ,sum) 
+#printing my name
+print("my name is jeremy")
 
-avg =sum/5
-print("the average is:",avg)
+#performing basic calculations
+print("sum of 5 and 3 is",5 +3)
