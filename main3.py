@@ -1,11 +1,10 @@
-print("Enter your marks")
-maths = int(input("maths"))
-english = int(input("english"))
-science = int(input("science"))
-history = int(input("history"))
+py = int(input("please enter a number"))
 
-sum = maths + english + science +history
-print("total marks:",sum)
+if (py<15):
+    print("the number is less than 15")
+    print("I am inside the if block")
+else:
+    print("the number is greater than 15")
+    print("I am inside the else blok")
 
-percentage = (sum/400)*100
-print("percentage",percentage)
+print("im going to be printed no matter")

@@ -1,10 +1,8 @@
-x = 3
-y =5
+actualcost = float(input("please enter the actual cost"))
 
-print(x)
-print(y)
-
-coding = "codingal"
-print(coding)
-name = input("enter your name")
-print(name)
+salescost = float(input("please input the sales cost"))
+if(salescost>actualcost):
+    amount = salescost-actualcost
+    print("total profit",amount)
+else:
+    print("no profit")

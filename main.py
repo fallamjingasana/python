@@ -1,8 +1,7 @@
-#printing a greeting message
-print("hello python")
+num = 45
+if num>0:
+    print("it is a positive number")
 
-#printing my name
-print("my name is jeremy")
-
-#performing basic calculations
-print("sum of 5 and 3 is",5 +3)
+num =-9
+if num>0:
+    print("it is a positive number")
