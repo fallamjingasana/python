@@ -1,8 +1,16 @@
-actualcost = float(input("please enter the actual cost"))
+a = 10
+b = 12
+c = 12
 
-salescost = float(input("please input the sales cost"))
-if(salescost>actualcost):
-    amount = salescost-actualcost
-    print("total profit",amount)
-else:
-    print("no profit")
+print(a != b)
+print(b != c)
+
+a = "python"
+b = "coding"
+
+if (a != b):
+    print("a and b are different")
+
+a = int(input("enter a number:"))
+if a%2 != 0:
+    print("it is an odd number")
