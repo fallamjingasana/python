@@ -1,16 +1,10 @@
-a = 10
-b = 12
-c = 12
-
-print(a != b)
-print(b != c)
-
-a = "python"
-b = "coding"
-
-if (a != b):
-    print("a and b are different")
-
-a = int(input("enter a number:"))
-if a%2 != 0:
-    print("it is an odd number")
+lower = int(input("enter a upper range"))
+upper = int(input("enter a lower number"))
+print("Prime numbers between",lower,"and",upper,"áre")
+for num in range(lower,upper +1):
+    if num > 1:
+        for i in range(2,num):
+            if (num%i)==0:
+                break
+            else:
+                print(num)

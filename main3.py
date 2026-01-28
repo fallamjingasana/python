@@ -1,14 +1,13 @@
-hight = float(input("please enter your hieght in cm"))
-weight = float(input("please enter your weight in kg"))
+num = input("please enter a numbers")
+length = len(num)
+if length>=4:
+    mid1_length = length//2-1
+    mid_2length = length//2
 
-BMI = weight / (hight/100) **2
-print("your BMI is:",BMI)
+    mid1=int(num[mid1_length])
+    mid=int(num[mid2_length])
 
-if BMI<=18.4:
-    print("you are under weight")
-elif BMI<=24.9:
-    print("you are healthy")
-elif BMI<=29.9:
-    print("you are overweight")
+    product = mid1*mid_2length
+    print("product",product)
 else:
-    print("you are obese")
+    print("invalid input")
