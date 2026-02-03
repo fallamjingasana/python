@@ -1,10 +1,6 @@
-string = input("please enter your string")
-char = input("enter your character")
-I = 0
-count = 0
-while(I< len(string)):
-    if(string[I]==char):
-        count= count + 1
-    I = I+1
-print(count)
-
+print("Half pyramid pattern of stars(*):")
+n = int(input("enter the number of rows:"))
+for i in range(n):
+  for j in range(i+1):
+    print("*",end="")
+  print()
