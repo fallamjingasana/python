@@ -1,6 +1,11 @@
-print("Half pyramid pattern of stars(*):")
-n = int(input("enter the number of rows:"))
-for i in range(n):
-  for j in range(i+1):
-    print("*",end="")
-  print()
+import turtle
+turtle.Screen().bgcolor("orange")
+turtle.Screen().setup(300,400)
+polygon = turtle.Turtle()
+num_sides = 6
+side_length = 70
+angle = 360.0/num_sides
+for i in range(num_sides):
+    polygon.forward(side_length)
+    polygon.right(angle)
+turtle.done()
