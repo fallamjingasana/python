@@ -1,23 +1,29 @@
-rowsize = int(input("please rnter the number of rows"))
-if rowsize%2==0:
-    halfdiamrow = int (rowsize/2)
-else:
-    halfdiamrow -1
-for i in range(1,halfdiamrow+1):
-    for i in rage(1,space+1):
-        print(end="")
-    space = space - 1
-    num = 1
-    for i  in range(2*i - 1):
-        print(end=str(num)):
-        num = num +1
-        print()
-    space = 1
+def add(P,Q):
+    return P +Q
+def subtract(P,Q):
+    return P-Q
+def multiply(P,Q):
+    return P*Q
+def divide(P,Q):
+    return P/Q
 
-    for i in range(1,halfdiamrow):
-        for i in range(1,space +1):
-            print(end="")
-            num +1
-            for i in range(1, 2*(halfdiamrow=j)):
-                print(end=str(num))
-            print()
+print("please select the opperation")
+print("a. Add")
+print("'b. subtract")
+print("c.multiply" )
+print("d, divide")
+
+choice = input("please enter the first number")
+
+num_1 = int(input("please enter the first number"))
+num_2 = int(input("please enter the second number"))
+
+if choice=="a":
+    print("result",add(num_1,num_2))
+elif choice=="b":
+    print("result",subtract(num_1,num_2))
+
+elif choice=="c":
+    print("result",myultiply(num_1,num_2))
+elif choice=="b":
+    print("result",divide(num_1,num_2))
