@@ -1,5 +1,6 @@
-def well_wishes():
-    print("hello")
-    print("how are you")
+def total_charge(bill_amount,tip_perc):
+    total = bill_amount*(1+0.01*tip_perc)
+    total = round(total,2)
+    print(f"please pay ${total}")
 
-well_wishes()
+total_charge(150,20)
