@@ -1,6 +1,7 @@
-def total_charge(bill_amount,tip_perc):
-    total = bill_amount*(1+0.01*tip_perc)
-    total = round(total,2)
-    print(f"please pay ${total}")
-
-total_charge(150,20)
+a  = input("enter a word:")
+for i in a:
+    if (i=="a"):
+        print("a is  found")
+        break
+    else:
+        print("a not found")
