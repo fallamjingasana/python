@@ -1,11 +1,15 @@
-l = [2,5,6,3,9,4]
-print("print original list:",l)
-count = 0
-for i in l:
-    count+=i
-avg = count/len(l)
-print("sum =",count)
-print("average",avg)
-l.sort()
-print(l[0])
-print(l[-1])
+weather = (1,0,1,1,0,0,1,1)
+
+sunny = 0
+rainy = 0
+
+for i in range(0,7):
+    if(weather[i] == 0):
+        rainy += 1
+    else:
+        sunny += 1
+
+if(rainy > sunny):
+    print("Bad weather")
+else:
+    print("Good weather")
