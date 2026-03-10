@@ -1,15 +1,15 @@
-tuplex = ("tuple",False,3.2,1)
-print(tuplex)
-tuplex = (1,6,8,4,3)
-print(tuplex)
-tuplex= tuplex + (1,)
-print(tuplex)
-
-tuplex = (50,90,10,60,50,50)
-print(tuplex.count(50))
-tuplex = (68,4,32,21,13,45,43,21)
-print (tuplex)
-v_slice= tuplex[3:5]
-print(v_slice)
-v_slice =  tuplex[:6]
-print(v_slice)
+student_data ={
+    "id1":{"name":"jeremy","class":"7","subject": "'math,science"},
+        "id2":{"name":"jakson","class":"7","subject": "'math,science"},
+            "id3":{"name":"jeremy","class":"7","subject": "'math,science"},
+                "id4":{"name":"jack","class":"7","subject": "'math,science"},
+}
+result = {}
+seenkeys = []
+for student_id,details in student_data.items():
+    uniquekey = (details["name"],details["class"],details["subject"])
+    if uniquekey not in seenkeys:
+        seenkeys.append(uniquekey)
+        result[student_id]=details
+for k,v in result.items():
+    print(k,":",v)

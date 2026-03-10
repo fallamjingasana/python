@@ -1,14 +1,7 @@
-def palindrome(r):
-    e = len(r) - 1
-    s = 0
-    while (s<e):
-        if(r[s] != r[e]):
-            return False
-        s+=1
-        e-=1
-        return True
-r = (1,2,3,3,2,1)
-if(palindrome(r)):
-    print("it is a flip- flop")
-else:
-    print("ít is not a flip flop")
+test_dict = ("coding": 2, "is" :2, "best" : 2, "for" : 2, "coding":2)
+k =2
+res = 0
+for key in test_dict:
+    if test_dict[key]==k
+    res= res+1
+print("Frequency of k is :"+str(res))
