@@ -1,15 +1,14 @@
-student_data ={
-    "id1":{"name":"jeremy","class":"7","subject": "'math,science"},
-        "id2":{"name":"jakson","class":"7","subject": "'math,science"},
-            "id3":{"name":"jeremy","class":"7","subject": "'math,science"},
-                "id4":{"name":"jack","class":"7","subject": "'math,science"},
-}
-result = {}
-seenkeys = []
-for student_id,details in student_data.items():
-    uniquekey = (details["name"],details["class"],details["subject"])
-    if uniquekey not in seenkeys:
-        seenkeys.append(uniquekey)
-        result[student_id]=details
-for k,v in result.items():
-    print(k,":",v)
+my_set = {1,2,3}
+print(my_set)
+my_set= {1.0,"hello",(1,2,3)}
+print(my_set)
+my_set = {1,2,3,4,3,2}
+print(my_set)
+my_set = set([1,2,3,2])
+print(my_set)
+num_set = set([0,1,3,4,5])
+print("original set :")
+print(num_set)
+num_set.pop()
+print("After the first element from the said set :")
+print(num_set)

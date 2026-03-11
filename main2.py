@@ -1,7 +1,7 @@
-test_dict = ("coding": 2, "is" :2, "best" : 2, "for" : 2, "coding":2)
-k =2
-res = 0
-for key in test_dict:
-    if test_dict[key]==k
-    res= res+1
-print("Frequency of k is :"+str(res))
+setx = {"green","Yellow"}
+sety = {"blue","green"}
+print(setx)
+print(sety)
+print("intersectionm of two said sets:")
+setz = setx.intersection(sety)
+print(setz)
