@@ -1,14 +1,10 @@
-my_set = {1,2,3}
-print(my_set)
-my_set= {1.0,"hello",(1,2,3)}
-print(my_set)
-my_set = {1,2,3,4,3,2}
-print(my_set)
-my_set = set([1,2,3,2])
-print(my_set)
-num_set = set([0,1,3,4,5])
-print("original set :")
-print(num_set)
-num_set.pop()
-print("After the first element from the said set :")
-print(num_set)
+numbers1=[1,2,3]
+numbers2=[4,5,6]
+result = map(lambda x,y: x+y , numbers1,numbers2)
+print(list(result))
+nums = [1,2,3,4,5]
+def sq(n):
+    return n*n
+square = list(map(sq,nums))
+print("sqare of numbers in the list")
+print(square)
