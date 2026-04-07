@@ -1,9 +1,13 @@
-empty_list =[]
-print()
-numbers= [1,2,3,4,5]
-print(numbers)
-triples = [1,2,3] *3
-print(triples)
-aList = [100,200,300,400,500]
-aList = aList[::-1]
-print(aList)
+from abc import ABC, abstractmethod
+class abcclass(ABC):
+    def print(self,x):
+        print("passed value",x)
+    @abstractmethod
+    def task(self):
+        print("we are inside  abs_class task")
+class test_class(abcclass):
+    def task(self):
+        print("we are inside test_class")
+test_obj = test_class()
+test_obj.task()
+test_obj.print(100)
