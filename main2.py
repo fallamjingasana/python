@@ -1,24 +1,19 @@
-from abc import ABC
-class animal(ABC):
-    def move(self):
-        pass
-class human(animal):
-    def move(self):
-        print("i can walk and run")
-class lion(animal):
-    def move(self):
-        print("i can roar")
-class dog(animal):
-    def move(self):
-        print("i can bark")
-class snake(animal):
-    def move(self):
-        print("i can crawl")
-r = human()
-r.move()
-k = snake()
-k.move()
-r = dog()
-r.move()
-k = lion()
-k.move()
+class flashcard:
+    def __init__(self,word,meaning):
+        self.word = word
+        self.meaning = meaning
+    def __str__(self):
+        return self.word + '(self.meaning)'
+
+flash = []
+print("welcome to flash card aplication")
+while(True):
+    word = input("enter the word you want to the flashcard")
+    meaning  = input("enter the meaning of the word")
+    flash.append(flashcard(word,meaning))
+    option = int(input("enter 0 if you want to continue else enter 1: "))
+    if(option):
+        break
+print("your flash cards")
+for i in flash:
+    print(">",i)

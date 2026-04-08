@@ -1,13 +1,19 @@
-from abc import ABC, abstractmethod
-class abcclass(ABC):
-    def print(self,x):
-        print("passed value",x)
-    @abstractmethod
-    def task(self):
-        print("we are inside  abs_class task")
-class test_class(abcclass):
-    def task(self):
-        print("we are inside test_class")
-test_obj = test_class()
-test_obj.task()
-test_obj.print(100)
+class A:
+    def __init__(self,a):
+        self.a = a
+    def __lt__(self,other):
+        if (self.a < other.a):
+            return "ob1 is less than ob2"
+        else:
+            return "ob2 is less than ob1"
+    def __eq__(self,other):
+        if (self.a == other.a):
+            return "both are equal"
+        else:
+            return "not equal"
+ob1 = A(2)
+ob2 = A(3)
+print(ob1 < ob2)
+ob3 = A(56)
+ob4 = A(56)
+print(ob3 == ob4)
