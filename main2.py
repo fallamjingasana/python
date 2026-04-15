@@ -1,19 +1,14 @@
-class flashcard:
-    def __init__(self,word,meaning):
-        self.word = word
-        self.meaning = meaning
-    def __str__(self):
-        return self.word + '(self.meaning)'
-
-flash = []
-print("welcome to flash card aplication")
-while(True):
-    word = input("enter the word you want to the flashcard")
-    meaning  = input("enter the meaning of the word")
-    flash.append(flashcard(word,meaning))
-    option = int(input("enter 0 if you want to continue else enter 1: "))
-    if(option):
-        break
-print("your flash cards")
-for i in flash:
-    print(">",i)
+import pygame
+pygame.init()
+window = pygame.display.set_mode((400,400))
+window.fill((255,255,255))
+GREEN = (0,255,0)
+pygame.draw.circle(window,GREEN,(300,300),50)
+pygame.draw.circle(window,GREEN,(100,100),50,3)
+pygame.display.update()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type ==pygame.QUIT:
+            running = False
+pygame.quit()

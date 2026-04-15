@@ -1,9 +1,9 @@
-class myclass:
-    _privateVar = 27;
-    def __privmeth(self):
-        print("im inside my class")
-    def hello(self):
-        print("private variable value:", myclass.__privateVar)
-foo = myclass()
-foo.hello()
-foo.__privmeth
+import pygame
+pygame.init()
+screen = pygame.display.set_mode((400,300))
+while True:
+    for event in pygame.event.get():
+        if event.type ==pygame.QUIT:
+            pygame.quit()
+    pygame.draw.rect(screen,(0,255,255),pygame.Rect(50,50,60,60))
+    pygame.display.flip()
