@@ -1,31 +1,35 @@
 from tkinter import *
-from datetime import date
 root = Tk()
-
-root.title('grtting started with widgets')
-root.geometry('400x200')
-
-lbl = Label(text = 'hey theyre', fg ='white',bg ='blue',height=1,width=300,)
-
-name_lbl = Label(text='full name',bg='blue')
-name_entry =Entry()
-
+root.title('login app')
+root.geometry('400x400')
+frame = Frame(master = root,height= 200,width= 360,bg = 'blue')
+lbl1=Label(frame,text='full name',bg='yellow',fg='black',width=12)
+lbl2=Label(frame,text='email',bg='yellow',fg='black',width=12)
+lbl3=Label(frame,text='password',bg='yellow',fg='black',width=12)
+name_entry= Entry(frame)
+email_entry = Entry(frame)
+pass_entry=Entry(frame)
 def display():
-    name= name_entry.get()
-    global Message
-    Message = 'welcom to the aplication \n todays date is :'
-    greet = 'hello' + name +'\n'
+    name = name_entry.get()
+    greet = 'hey'+name
+    message = 'congratulations fpr ypur new account!'
+    textbox.insert(END,greet)
+    textbox.insert(END,message)
+textbox = Text(bg='grey',fg= 'black')
 
-    text_box.insert(EMD,greet)
-    text_box.insert(EMD,message)
-    text_box.insert(EMD,today())
-text_box = Text(height=5)
+btn = Button(text= 'create an account',command=display,bg='red')
+frame.place(x=20,y=0)
 
-btn = Button(text='begin', command = display,height=1,fg='red',bg='cyan')
+lbl1.place(x=20,y=20)
+name_entry.place(x=150,y=20)
 
-lbl.pack()
-name_lbl.pack()
-name_entry.pack()
-btn.pack()
-text_box.pack()
+lbl2.place(x=20,y=80)
+
+email_entry.place(x=150, y=80)
+
+lbl3.place(x=20,y=140)
+
+lbl3.place(x=20,y=140)
+btn.place(x=130,y=210)
+textbox.place(y=250)
 root.mainloop()
