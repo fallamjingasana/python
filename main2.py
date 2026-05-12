@@ -1,35 +1,11 @@
-from tkinter import *
+from tkinter import*
+from tkinter import messagebox
+
 root = Tk()
-root.title('login app')
-root.geometry('400x400')
-frame = Frame(master = root,height= 200,width= 360,bg = 'blue')
-lbl1=Label(frame,text='full name',bg='yellow',fg='black',width=12)
-lbl2=Label(frame,text='email',bg='yellow',fg='black',width=12)
-lbl3=Label(frame,text='password',bg='yellow',fg='black',width=12)
-name_entry= Entry(frame)
-email_entry = Entry(frame)
-pass_entry=Entry(frame)
-def display():
-    name = name_entry.get()
-    greet = 'hey'+name
-    message = 'congratulations fpr ypur new account!'
-    textbox.insert(END,greet)
-    textbox.insert(END,message)
-textbox = Text(bg='grey',fg= 'black')
+root.geometry("200x200")
+def msg():
+    messagebox.showwarning("Alert","stop virus found")
 
-btn = Button(text= 'create an account',command=display,bg='red')
-frame.place(x=20,y=0)
-
-lbl1.place(x=20,y=20)
-name_entry.place(x=150,y=20)
-
-lbl2.place(x=20,y=80)
-
-email_entry.place(x=150, y=80)
-
-lbl3.place(x=20,y=140)
-
-lbl3.place(x=20,y=140)
-btn.place(x=130,y=210)
-textbox.place(y=250)
+button = Button(root,text='scan for virus',command=msg)
+button.place(x=40,y=80)
 root.mainloop()

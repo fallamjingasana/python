@@ -1,20 +1,15 @@
 from tkinter import *
-root = Tk()
-root.title('member pad')
-root.geometry('250x300')
-nums =[[9,8,7],[6,5,4],[3,2,1],["#",0,'*']]
-for i in range(4):
-    root.columnconfigure(i,weight=1,minsize=75)
-    root.rowconfigure(i,weight=1,minsize=50)
-    for j in range(0,3):
-        frame = Frame(
-            master=root,
-            relief=SUNKEN,
-            borderwidth=1
+window = Tk()
+window.geometry('100x100')
 
-        )
-        frame.grid(row=i,column=j)
-        label = Label(master=frame ,text=nums[i][j],bg='blue')
-        label.pack(padx=3,pady=3)
+def handle_keypress(event):
+    'print the character associated to the key pressed'
 
-root.mainloop()
+window.bind("<Key>",handle_keypress)
+
+def handle_click(event):
+    print('the button was clicked')
+button = Button(text='click me')
+button.pack()
+button.bind('<Button-1>',handle_click)
+window.mainloop()
