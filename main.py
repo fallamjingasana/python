@@ -1,15 +1,45 @@
-from tkinter import *
-window = Tk()
-window.geometry('100x100')
+from tkinter import*
+from tkinter.filedialog import askopenfilename,asksaveasfilename
 
-def handle_keypress(event):
-    'print the character associated to the key pressed'
+window =Tk()
+window.geometry("600x500")
+window.title("jeremys text editor")
+window.rowconfigure(0,minsize=800,weight=1)
+window.columnconfigure(1,minsize=800,weight=1)
 
-window.bind("<Key>",handle_keypress)
+def open_file():
+    filepath=askopenfilename(
+        filetypes=[('text files','*.txt'),("All files",'*.*')]
+    )
+    if not filepath:
+        return
+    txt_edit.delete(1.0,END)
+    with open(filepath,'r') as input_file:
+        text= input_file.read()
+        txt_edit.insert(END,text)
+        input_file.close()
+    window.title('jeremys text editor - {filepath}')
 
-def handle_click(event):
-    print('the button was clicked')
-button = Button(text='click me')
-button.pack()
-button.bind('<Button-1>',handle_click)
+def save_file():
+    filepath = asksaveasfilename(
+        defaultextension='txt',
+         filetypes=[('text files','*.txt'), ('All files ','*.*')]
+    )
+    if not filepath:
+        return
+    with open(filepath,'W') as output_file:
+        text= txt_edit.get(1.0,END)
+        output_file.write(text)
+    window.title(f'jeremys text editor - {filepath}')
+
+txt_edit = Text(window)
+fr_buttons = Frame(window,relief=RAISED,bd=2)
+btn_open= Button(fr_buttons,text='open',command=open_file)
+btn_save = Button(fr_buttons, text="Save As..............", command=save_file)
+btn_open.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
+btn_save.grid(row=1, column=0, sticky="ew", padx=5)
+fr_buttons.grid(row=0, column=0, sticky="ns")
+
+txt_edit.grid(row=0, column=1, sticky="nsew")
+
 window.mainloop()
