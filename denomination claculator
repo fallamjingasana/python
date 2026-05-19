@@ -1,0 +1,72 @@
+from tkinter import*
+from tkinter import messagebox
+
+root = Tk()
+root.title("denomination counter")
+root.geometry("600x400")
+root.config(bg="lightblue")
+
+
+
+Label(
+    root,
+    text="welcome to ttje denomination counter",
+    bg='lightblue',
+    font=("Arial",14)
+).pack()
+
+def topwin():
+    top=Toplevel(root)
+    top.title("calculator")
+    top.geometry("400x300")
+    top.config(bg="lightgrey")
+
+    Label(top,text="Enter Amount",bg="lightgrey").pack(pady=5)
+
+    entry = Entry(top)
+    entry.pack()
+
+    e1= Entry(top)
+    e2=Entry(top)
+    e3= Entry(top)
+
+    def calc():
+        amt = int(entry.get())
+
+        n2000 = amt // 2000
+        amt%=500
+
+        n500 = amt //500
+        amt%=500
+
+        n100=amt // 100
+
+        e1.delete(0,END)
+        e2.delete(0,END)
+        e3.delete(0,END)
+
+        e1.insert(0,n2000)
+        e2.insert(0,n500)
+        e3.insert(0,n100)
+
+    Button(top,text="calculate ", command=calc,bg="brown",fg= white).pack(pady=10)
+
+
+    Label(top,text="2000 notes",bg="lightgrey").pack()
+    e1.pack()
+
+    Label(top,text="500 notes",bg="lightgrey").pack()
+    e2.pack()
+
+    Label(top,text="100 notes",bg="lightgrey").pack()
+    e3.pack()
+
+Button(
+    root,
+    text="start",
+    command=topwin,
+    bg= "brown",
+    fg="white"
+).pack(pady=20)
+
+root.mainloop()
