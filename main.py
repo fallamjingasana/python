@@ -1,45 +1,128 @@
-from tkinter import*
-from tkinter.filedialog import askopenfilename,asksaveasfilename
+import tkinter as  tk
+from tkinter import ttk, messagebox
 
-window =Tk()
-window.geometry("600x500")
-window.title("jeremys text editor")
-window.rowconfigure(0,minsize=800,weight=1)
-window.columnconfigure(1,minsize=800,weight=1)
+class ResturantApp:
+    def __init__(self,root):
+        self.root=root
+        self.root.title("Resturant App")
+        self.root.geometry("600x500")
 
-def open_file():
-    filepath=askopenfilename(
-        filetypes=[('text files','*.txt'),("All files",'*.*')]
-    )
-    if not filepath:
-        return
-    txt_edit.delete(1.0,END)
-    with open(filepath,'r') as input_file:
-        text= input_file.read()
-        txt_edit.insert(END,text)
-        input_file.close()
-    window.title('jeremys text editor - {filepath}')
+        self.menue = {
+            "fries meal":2,
+            "lunch meal":2,
+            " burger meal":3,
+            "chese burger":2.5,
+            "drinks":1
+        }
 
-def save_file():
-    filepath = asksaveasfilename(
-        defaultextension='txt',
-         filetypes=[('text files','*.txt'), ('All files ','*.*')]
-    )
-    if not filepath:
-        return
-    with open(filepath,'W') as output_file:
-        text= txt_edit.get(1.0,END)
-        output_file.write(text)
-    window.title(f'jeremys text editor - {filepath}')
+        try:
+            self.bg= tk.PhotoImage()
 
-txt_edit = Text(window)
-fr_buttons = Frame(window,relief=RAISED,bd=2)
-btn_open= Button(fr_buttons,text='open',command=open_file)
-btn_save = Button(fr_buttons, text="Save As..............", command=save_file)
-btn_open.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
-btn_save.grid(row=1, column=0, sticky="ew", padx=5)
-fr_buttons.grid(row=0, column=0, sticky="ns")
+            canvas = tk.canvas(root,width=600,height=500)
+            canvas.pack(fil="both",expand=True)
 
-txt_edit.grid(row=0, column=1, sticky="nsew")
+            canvas.create_image(0,0, image=self.bg,anchor="nw")
+            
+            self.frame = ttk.Frame(root, padding=20)
+            canvas.create_window(300,250, widow= slef.frame)
 
-window.mainloop()
+        except:
+            self.frame= ttk.Frame(root,padding= 20)
+            self.frame.pack(pady=20)
+
+        ttk.Label(
+                self.frame,
+                text="Resturant order management"
+                font=("Arial"18 , "bold")
+
+            ).grid(row=0,columsspan=2,pady=10)
+
+            self.qty= {}
+
+            for i , (item,price) in enumerate(self.menue.items(),start = 1):
+                tkk.Label(
+                    self.frame,
+                    text=f"{item} ($ {price})"
+
+                ).grid(row=i, column=0, padx=10, pady=5)
+                
+                var = tk.IntVar()
+                tk.Spinbox(
+
+            tk.Spinbox(
+
+tk.Spinbox(
+
+self.frame,
+
+    from_=0,
+
+to=20,
+
+        width=5,
+
+        textvariable=var
+
+        ).grid(row=i, column=1)
+ 
+            ).grid(row=i, column=1)
+            self.qty[item]=var
+
+            ttk.Button(
+
+self.frame,
+
+text="Place Order",
+
+command=self.place_order
+
+).grid(row=8, column=0, pady=15)
+
+ttk.Button(
+
+self.frame,
+
+text="Clear",
+
+command=self.clear
+
+).grid(row=8, column=1)
+
+def place_order(self):
+
+    ttk.Button(
+
+self.frame,
+
+text="Place Order",
+
+command=self.place_order
+
+).grid(row=8, column=0, pady=15)
+
+ttk.Button(
+
+    self.frame,
+
+text="Clear",
+
+command=self.clear
+
+).grid(row=8, column=1)
+
+
+    def clear(self):
+
+    for var in self.qty.values():
+
+var.set(0)
+
+# Run app
+
+root = tk.Tk()
+
+app = RestaurantApp(root)
+
+root.mainloop()
+
+
